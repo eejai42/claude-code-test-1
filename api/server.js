@@ -7,13 +7,19 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // Database connection pool
-const pool = new Pool({
+const dbConfig = {
   user: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || 'postgres',
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 5432,
   database: process.env.DB_NAME || 'landscaping',
-});
+};
+
+// Only add password if it's explicitly set
+if (process.env.DB_PASSWORD) {
+  dbConfig.password = process.env.DB_PASSWORD;
+}
+
+const pool = new Pool(dbConfig);
 
 // Middleware
 app.use(cors());
