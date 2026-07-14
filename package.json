@@ -1,0 +1,38 @@
+{
+  "name": "claude-code-test-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:init": "node db/init.js",
+    "api": "node api/server.js",
+    "start:app": "react-scripts start --prefix app",
+    "build:app": "react-scripts build --prefix app",
+    "dev": "concurrently \"npm run api\" \"npm run start:app\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:41729/git/eejai42/claude-code-test-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.5.2",
+    "axios": "^1.18.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "lucide-react": "^1.24.0",
+    "pg": "^8.22.0",
+    "postcss": "^8.5.19",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-scripts": "^5.0.1",
+    "tailwindcss": "^4.3.2",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
