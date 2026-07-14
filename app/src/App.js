@@ -6,7 +6,8 @@ import FilterBar from './components/FilterBar';
 import StatsPanel from './components/StatsPanel';
 import './App.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
+// Use the same host as the app is running on, but port 3001 for the API
+const API_URL = process.env.REACT_APP_API_URL || `http://${window.location.hostname}:3001/api`;
 
 function App() {
   const [projects, setProjects] = useState([]);
